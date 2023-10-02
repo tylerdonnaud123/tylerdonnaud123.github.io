@@ -3,7 +3,7 @@ body {
 }
 
 canvas {
-  background-color: hsl(220, 100%, 66%);
+  background-color: hwb(220 32% 0%);
 }
 
 img {

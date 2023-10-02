@@ -73,6 +73,7 @@ $(function () {
 createCannon("left", 600,1000)
 createCannon("top", 1000,1000)
 createCannon("right", 180,1000)
+createCannon("top", 600, 900)
 
 
 
