@@ -1,3 +1,5 @@
+const { data } = require("jquery");
+
 $(document).ready(function () {
   /////////////////////////////////////////////////
   // SETUP SECTION - DO NOT TOUCH /////////////////
@@ -69,8 +71,11 @@ dataShapes.push(shape)
     animationDetails = 5;
   }
   // TODO 5-a: add a function that handles the bad display type
-  
-
+  function handleBad (data, repeat){
+    repeat + 1;
+    animationDetails.displayType = 3;
+  }
+  setBackgroundWithMixed(data, repeat)
   /////////////////////////////////////////////////
   // BUTTON HANDLERS BELOW HERE (3-b, 4-b, 5-b) ///
   /////////////////////////////////////////////////
