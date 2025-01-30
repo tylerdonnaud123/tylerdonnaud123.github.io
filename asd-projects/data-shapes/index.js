@@ -1,5 +1,3 @@
-const { data } = require("jquery");
-
 $(document).ready(function () {
   /////////////////////////////////////////////////
   // SETUP SECTION - DO NOT TOUCH /////////////////
