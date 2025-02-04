@@ -36,7 +36,7 @@ $(document).ready(function () {
   /////////////////////////////////////////////////
   // ALL OF YOUR CODE SHOULD GO BELOW HERE ////////
   /////////////////////////////////////////////////
- //TODO 0//
+ //TODO 0 complete//
 
   // TODO 1: create a new shape object and add it to the array
   
