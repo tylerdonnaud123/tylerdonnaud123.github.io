@@ -11,6 +11,13 @@ var highScoreElement = $("#highScore");
 
 // TODO 4a: Create the snake, apple and score variables
 // Game Variables
+var apple = {
+ 
+}
+var snake = {
+
+}
+var score = 0;
 
 // Constant Variables
 var ROWS = 20;
@@ -42,8 +49,8 @@ init();
 function init() {
   // TODO 4c-2: initialize the snake
 
-  // TODO 4b-2: initialize the apple
-
+  // TODO 4b-2: initialize the apple 
+  makeApple();
   // TODO 5a: Initialize the interval
 
 }
@@ -183,9 +190,22 @@ function endGame() {
 /* Create an HTML element for the apple using jQuery. Then find a random
  * position on the board that is not occupied and position the apple there.
  */
+
 function makeApple() {
-  // TODO 4b-1: Fill in the makeApple() code block
+  // make the apple jQuery Object and append it to the board
+  apple.element = $("<div>").addClass("apple").appendTo(board);
+
+  // get a random available row/column on the board
+  var randomPosition = getRandomAvailablePosition();
+
+  // initialize the row/column properties on the Apple Object
+  apple.row = randomPosition.row;
+  apple.column = randomPosition.column;
+
+  // position the apple on the screen
+  repositionSquare(apple);
 }
+
 
 /* Create an HTML element for a snakeSquare using jQuery. Then, given a row and
  * column on the board, position it on the screen. Finally, add the new
@@ -193,7 +213,7 @@ function makeApple() {
  */
 function makeSnakeSquare(row, column) {
   // TODO 4c-1: Fill in this function's code block
-}
+
 
 /* 
   event.which returns the keycode of the key that is pressed when the
@@ -225,6 +245,8 @@ function repositionSquare(square) {
   squareElement.css("left", column * SQUARE_SIZE + buffer);
   squareElement.css("top", row * SQUARE_SIZE + buffer);
 }
+}
+
 
 /* Returns a (row,column) Object that is not occupied by another game component
  */
