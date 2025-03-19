@@ -44,8 +44,8 @@ function runProgram(){
     }
 
     function redrawWalker(){
-      $(#"walker").css("left", positionX)
-      $(#"walker").css("top", positionY)    }
+      $("#walker").css("left", positionX)
+      $("#walker").css("top", positionY)    }
 
   }
   
