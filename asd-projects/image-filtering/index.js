@@ -20,8 +20,10 @@ function resetAndRender() {
 // all of your apply functions
 function applyAndRender() {
   // Multiple TODOs: Call your apply function(s) here
+  applyFilter(reddify);
+  applyFilterNoBackground(decreaseBlue);
+  applyFilterNoBackground(increaseGreenByBlue);
 
-  
 
   // do not change the below line of code
   render($("#display"), image);
@@ -32,18 +34,57 @@ function applyAndRender() {
 /////////////////////////////////////////////////////////
 
 // TODO 1, 2 & 4: Create the applyFilter function here
+function applyFilter(filterFunction){
+for(var i = 0; i < image.length; i++){
 
+  for(var r = 0; r < image[i].length; r++){
 
-// TODO 7: Create the applyFilterNoBackground function
+    var rgbString = image[i][r]
+    var rgbNumbers = rgbStringToArray(rgbString)
 
+    filterFunction(rgbNumbers)
+    rgbString = rgbArrayToString(rgbNumbers);
+    image[i][r] = rgbString
+  }
+}
+}
+
+// TODO 7: Create the applyFilterNoBackground function 
+// (Tyler NEED HELP)
+// function applyFilterNoBackground(){
+//   var backcolor = image[0][0];
+// for(var i = 0; i < image.length; i++){
+
+//   for(var r = 0; r < image[i].length; r++){
+
+//     var rgbString = image[i][r]
+//     var rgbNumbers = rgbStringToArray(rgbString)
+//     if(background !== rgbString){
+//     filterFunction(rgbNumbers)
+//     rgbString = rgbArrayToString(rgbNumbers);
+//     }
+//     image[i][r] = rgbString
+//   }
+//  }
+// }
 
 // TODO 5: Create the keepInBounds function
-
+function keepInBounds(number){
+  return number < 0 ? 0 :
+    number > 255 ? 255 :
+    number;
+}
 
 // TODO 3: Create reddify function
-
+function reddify(array){
+  array[RED] = 200;
+}
 
 // TODO 6: Create more filter functions
-
-
+function decreaseBlue(blueAr){
+  blueAr[BLUE]=keepInBounds(blueAr[BLUE]);
+}
+function increaseGreenByBlue(greenAr){
+  greenAr[GREEN]=keepInBounds(greenAr[GREEN]+blueAr[BLUE]);
+}
 // CHALLENGE code goes below here
