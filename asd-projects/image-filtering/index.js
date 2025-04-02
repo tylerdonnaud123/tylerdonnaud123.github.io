@@ -51,22 +51,22 @@ for(var i = 0; i < image.length; i++){
 
 // TODO 7: Create the applyFilterNoBackground function 
 // (Tyler NEED HELP)
-// function applyFilterNoBackground(){
-//   var backcolor = image[0][0];
-// for(var i = 0; i < image.length; i++){
+  function applyFilterNoBackground(filterFunction){
+   var backColor = image[0][0];
+ for(var i = 0; i < image.length; i++){
 
-//   for(var r = 0; r < image[i].length; r++){
+   for(var r = 0; r < image[i].length; r++){
 
-//     var rgbString = image[i][r]
-//     var rgbNumbers = rgbStringToArray(rgbString)
-//     if(background !== rgbString){
-//     filterFunction(rgbNumbers)
-//     rgbString = rgbArrayToString(rgbNumbers);
-//     }
-//     image[i][r] = rgbString
-//   }
-//  }
-// }
+    var rgbString = image[i][r]
+    var rgbNumbers = rgbStringToArray(rgbString)
+    if(backColor !== rgbString){
+    filterFunction(rgbNumbers)
+    rgbString = rgbArrayToString(rgbNumbers);
+    }
+    image[i][r] = rgbString
+  }
+ }
+}
 
 // TODO 5: Create the keepInBounds function
 function keepInBounds(number){
@@ -85,6 +85,6 @@ function decreaseBlue(blueAr){
   blueAr[BLUE]=keepInBounds(blueAr[BLUE]);
 }
 function increaseGreenByBlue(greenAr){
-  greenAr[GREEN]=keepInBounds(greenAr[GREEN]+blueAr[BLUE]);
+  greenAr[GREEN]=keepInBounds(greenAr[GREEN]+greenAr[BLUE]);
 }
 // CHALLENGE code goes below here
