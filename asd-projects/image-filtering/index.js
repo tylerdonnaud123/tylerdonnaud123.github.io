@@ -20,9 +20,9 @@ function resetAndRender() {
 // all of your apply functions
 function applyAndRender() {
   // Multiple TODOs: Call your apply function(s) here
-  applyFilter(reddify);
+  // applyFilter(reddify);
   applyFilterNoBackground(decreaseBlue);
-  applyFilterNoBackground(increaseGreenByBlue);
+  // applyFilterNoBackground(increaseGreenByBlue);
 
 
   // do not change the below line of code
@@ -82,7 +82,7 @@ function reddify(array){
 
 // TODO 6: Create more filter functions
 function decreaseBlue(blueAr){
-  blueAr[BLUE]=keepInBounds(blueAr[BLUE]);
+  blueAr[BLUE]=keepInBounds(blueAr[BLUE] - 50);
 }
 function increaseGreenByBlue(greenAr){
   greenAr[GREEN]=keepInBounds(greenAr[GREEN]+greenAr[BLUE]);
