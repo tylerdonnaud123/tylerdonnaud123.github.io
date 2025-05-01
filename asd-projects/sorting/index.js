@@ -44,7 +44,7 @@ async function quickSort(array, left, right){
 
 
 // TODOs 4 & 5: Implement partition
-async function partition(array,left,right){
+async function partition(array,left,right){ //picks a partition point and sorts the left side and right side based on whos smaller or bigger
  var pivot = array[Math.floor((right + left) / 2)].value;
     while(left < right){
         while(array[left].value < pivot) { left++};
