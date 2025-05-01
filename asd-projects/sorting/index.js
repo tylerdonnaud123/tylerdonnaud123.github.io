@@ -28,14 +28,7 @@ async function bubbleSort(array) {
 }
 
 // TODO 3: Implement quickSort
-
-//FUNCTION quicksort(array, left, right):
-// IF (right - left) > 0:
-// index = partition(array, left, right)
-// IF left < (index - 1):
-//   quickSort(array, left, index - 1)
-// IF index < right:
-//   quicksort(array, index, right)
+//quick sorts the array
 async function quickSort(array, left, right){
     if((right - left) > 0){
         var index = await partition(array,left,right);
@@ -51,15 +44,27 @@ async function quickSort(array, left, right){
 
 
 // TODOs 4 & 5: Implement partition
-
+async function partition(array,left,right){
+ var pivot = array[Math.floor((right + left) / 2)].value;
+    while(left < right){
+        while(array[left].value < pivot) { left++};
+        while(array[right].value > pivot) { right--}
+            if (left < right){
+                swap(array,left,right);
+                updateCounter(quickCounter); //This will update the quicksorts' update counter like it updated score in previous projects
+                await sleep();
+            }
+    }
+   return left + 1 //i'm pretty sure this will close the recursive loop
+}
 
 // TODO 1: Implement swap
-function swap(array, i, j) {
+function swap(array, i, j) { //swaps both items in the array
     let temp = array[i];
     array[i] = array[j];
     array[j] = temp;
     drawSwap(array, i, j);
-    //swaps both items in the array
+    
 }
 ///////////////////////////////////////////////////////////////////////
 /////////////////////// YOUR WORK GOES ABOVE HERE /////////////////////
