@@ -29,7 +29,9 @@ function runProgram(){
   var interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL);   // execute newFrame at 60fps
   $(document).on('keydown', handleKeyDown);                           // handling key down events
   $(document).on('keyup', handleKeyUp);                               // handling key up events
-  $("#walker").on('click', changeColor);                              // changing color on clicking player
+  $(document).on('click', changeColor);      
+  startBall()
+                          // changing color on clicking player
   ////////////////////////////////////////////////////////////////////////////////
   ///////////////////////// CORE LOGIC ///////////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
@@ -74,20 +76,16 @@ function runProgram(){
   */
   function handleKeyUp(event){
     if (event.which === KEY.LEFT) {
-      walker.speedX = 0;
-      console.log("LEFT released");
+      rightPaddle.speedY = 0
     }
     if (event.which === KEY.UP) {
-      walker.speedY = 0;
-      console.log("UP released");
+      rightPaddle.speedY = 0
     }
     if (event.which === KEY.RIGHT) {
-      walker.speedX = 0;
-      console.log("RIGHT released");
+      leftPaddle.speedY = 0
     }
     if (event.which === KEY.DOWN) {
-      walker.speedY = 0;
-      console.log("DOWN released");
+      leftPaddle.speedY = 0
     }
   }
   ////////////////////////////////////////////////////////////////////////////////
