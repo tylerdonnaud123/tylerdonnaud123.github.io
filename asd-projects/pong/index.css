@@ -40,4 +40,28 @@ body {
   position: absolute;
   top: 100px;
   left: 100px;
+ }
+ #line {
+  /* appearance */
+  background-color: white;
+  width: 5px;
+  height: 440px;
+  border-radius: 0px;
+
+  /* positioning */
+  position: absolute;
+  top: 0px;
+  left: 225px;
+}
+  #score1 {
+    text-align: center;
+    background-color: white;
+    color: black;
+    width: 445px;
+}
+  #score2 {
+    text-align: center;
+    background-color: white;
+    color: black;
+    width: 445px;
 }
