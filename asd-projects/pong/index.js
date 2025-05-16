@@ -145,7 +145,7 @@ function runProgram(){
     let height = BOARD_HEIGHT; 
 
     if(doCollide(ball,leftPaddle)) {
-      //collide swith left paddle
+      //collides with left paddle
       item.x -= speedX;
       item.speedX = -speedX;
     }
@@ -177,7 +177,7 @@ function runProgram(){
       item.speedY = -speedY;
     }
     if(coordX + item.width > width){
-      //ball collides with right paddle, then reset the ball and increase score
+      //ball collides with right paddle, reset the ball and increase score
       if(item.id === "#ball"){
         player1Score++;
         $("#score1").text("Player 1 Score: " + player1Score);
@@ -204,6 +204,7 @@ function runProgram(){
     square2.bottomY = square2.y + square2.height
     square2.rightX = square2.x + square2.width
     // TODO: Return true if they are overlapping, false otherwise
+    //This checks if the sides are overlapping or not
    if(square1.leftX < square2.rightX && square1.rightX > square2.leftX && square1.topY < square2.bottomY && square1.bottomY > square2.topY){
      return true
    
@@ -228,7 +229,7 @@ function runProgram(){
  
   }
 }
-  // Gives the ball a starting position and a random speed
+  // Gives the ball a starting position and a random speed everytime a player scores a point and the ball is recentered
   function startBall(){
     ball.x = 245
     ball.y = 175
